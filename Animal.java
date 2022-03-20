@@ -1,5 +1,7 @@
+import java.util.Objects;
+
 abstract public class Animal {
-    private static String kaind;
+    private String kaind;
     private String eat;
     public Animal(String kaind, String eat) {
         this.kaind = kaind;
@@ -8,7 +10,7 @@ abstract public class Animal {
     public Animal(String kaind) {
         this.kaind = kaind;
     }
-    public static String getKaind() {
+    public String getKaind() {
         return kaind;
     }
     public String getEat() {
@@ -20,11 +22,29 @@ abstract public class Animal {
     public void setEat(String eat) {
         this.eat = eat;
     }
+
     public void eat() {
-        System.out.println("I am eating");
+        System.out.println("I am eating ");
+    }
+    @Override
+    public String toString() {
+        return getKaind()+" eat "+getEat();
     }
     public abstract void makeSound ();
     public void bite() {
         System.out.println("I am not bite");
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Animal animal = (Animal) o;
+        return Objects.equals(kaind, animal.kaind) && Objects.equals(eat, animal.eat);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(kaind, eat);
     }
 }

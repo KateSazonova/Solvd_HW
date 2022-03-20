@@ -13,9 +13,12 @@ public class Antelope extends Animal{
         System.out.println("I am bite");
     }
     public static void main(String[] args) {
-        Antelope gazelle = new Antelope("gazelle", "grass");
-        gazelle.makeSound();
-        gazelle.eat();
-        gazelle.bite();
+        Antelope gazelle1 = new Antelope("gazelle", "grass");
+        gazelle1.makeSound();
+        gazelle1.eat();
+        gazelle1.bite();
+        System.out.println(gazelle1.toString());
+        Antelope gazelle2 = new Antelope("gazelle", "grass");
+        System.out.println(gazelle1.equals(gazelle2));
     }
 }

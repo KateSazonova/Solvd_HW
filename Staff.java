@@ -36,13 +36,10 @@ public class Staff {
         this.surname = surname;
     }
 
-    public void feed() {
-        System.out.println("Staffer " + getSurname() + " fed " + Animal.getKaind());
-    }
     public static void main(String[] args) {
         Cat lion = new Cat("lion", "meat");
         Staff smith=new Staff("Smith");
-        smith.feed();
+        System.out.println("Staffer " + smith.getSurname() + " fed " + lion.getKaind());
         Zoo happy=new Zoo(3);
         System.out.print("Staffer "+smith.getSurname()+ " moved " + lion.getKaind() +" from avairy "+happy.getAvairy());
         happy.setAvairy(5);

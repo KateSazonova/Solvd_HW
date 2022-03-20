@@ -13,9 +13,12 @@ public class Monkey extends Animal {
         System.out.println("I am bite");
     }
     public static void main(String[] args) {
-        Monkey gorilla = new Monkey("gorilla", "banana");
-        gorilla.makeSound();
-        gorilla.eat();
-        gorilla.bite();
+        Monkey gorilla1 = new Monkey("gorilla", "banana");
+        gorilla1.makeSound();
+        gorilla1.eat();
+        gorilla1.bite();
+        System.out.println(gorilla1.toString());
+        Monkey gorilla2 = new Monkey("gorilla", "appel");
+        System.out.println(gorilla1.equals(gorilla2));
     }
 }
