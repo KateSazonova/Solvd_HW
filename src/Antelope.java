@@ -1,3 +1,5 @@
+package src;
+
 public class Antelope extends Animal{
     public Antelope(String kaind, String eat) {
         super(kaind, eat);

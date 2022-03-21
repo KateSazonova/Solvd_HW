@@ -1,3 +1,5 @@
+package src;
+
 public final class Bilet {
     private static final int priсe = 10;
     private String category;

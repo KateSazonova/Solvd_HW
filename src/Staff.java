@@ -1,3 +1,5 @@
+package src;
+
 public class Staff implements Payment, Info{
     private int salary;
     private String surname;

@@ -1,3 +1,5 @@
+package src;
+
 public class Client implements Visited, Info {
     private int number;
     private static String nameClient;

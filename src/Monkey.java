@@ -1,3 +1,5 @@
+package src;
+
 public class Monkey extends Animal {
     public Monkey(String kaind, String eat) {
         super(kaind, eat);

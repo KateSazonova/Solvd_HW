@@ -1,3 +1,5 @@
+package src;
+
 class Zoo implements Info {
     private static String nameZoo;
     private static int avairy;

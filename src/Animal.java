@@ -1,3 +1,5 @@
+package src;
+
 import java.util.Objects;
 
 abstract public class Animal implements Info, Action, Problem {

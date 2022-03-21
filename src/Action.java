@@ -1,3 +1,5 @@
+package src;
+
 public interface Action {
     public default void drink() {
         System.out.println("I drink water");
