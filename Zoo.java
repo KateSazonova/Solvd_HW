@@ -1,4 +1,4 @@
-class Zoo {
+class Zoo implements Info {
     private static String nameZoo;
     private static int avairy;
     public Zoo(String nameZoo) {
@@ -13,12 +13,24 @@ class Zoo {
     public static int getAvairy() {
         return avairy;
     }
-
     public void setNameZoo(String nameZoo) {
         this.nameZoo = nameZoo;
     }
     public void setAvairy(int avairy) {
         this.avairy = avairy;
+    }
+    public static void addAvairy(){
+        System.out.println(getAvairy()+1);
+    }
+
+    @Override
+    public void showInfo() {
+        System.out.println(getNameZoo());
+    }
+
+    public static void main(String[] args) {
+        Zoo happy = new Zoo(3);
+        happy.addAvairy();
     }
 }
 

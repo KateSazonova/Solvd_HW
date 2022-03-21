@@ -1,9 +1,9 @@
-public class Staff {
+public class Staff implements Payment, Info{
     private int salary;
     private String surname;
     private String position;
 
-    public Staff(String position, int salary) {
+    public Staff(int salary, String position) {
         this.salary = salary;
         this.position = position;
     }
@@ -12,8 +12,24 @@ public class Staff {
         this.surname = surname;
     }
 
+
+    @Override
+    public void work() {
+        System.out.println("Works like "+ getPosition());
+    }
+
+    @Override
+    public void payment() {
+        System.out.println(getPosition()+" get salary = "+getSalary()+" in a month");
+    }
+
     public int getSalary() {
         return salary;
+    }
+
+    @Override
+    public void getPremium() {
+        System.out.println(getSurname()+" get premium " +getSalary()*2);
     }
 
     public String getPosition() {
@@ -35,6 +51,10 @@ public class Staff {
     public void setSurname(String surname) {
         this.surname = surname;
     }
+    @Override
+    public void showInfo() {
+        System.out.println(getSurname());
+    }
 
     public static void main(String[] args) {
         Cat lion = new Cat("lion", "meat");
@@ -44,5 +64,7 @@ public class Staff {
         System.out.print("Staffer "+smith.getSurname()+ " moved " + lion.getKaind() +" from avairy "+happy.getAvairy());
         happy.setAvairy(5);
         System.out.println(" to avairy "+ happy.getAvairy());
+        Info info1=new Staff("Ivanov");
+        info1.showInfo();
     }
 }

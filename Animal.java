@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-abstract public class Animal {
+abstract public class Animal implements Info, Action, Problem {
     private String kaind;
     private String eat;
     public Animal(String kaind, String eat) {
@@ -23,7 +23,7 @@ abstract public class Animal {
         this.eat = eat;
     }
 
-    public void eat() {
+    public final void eat() {
         System.out.println("I am eating ");
     }
     @Override

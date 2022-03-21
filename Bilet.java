@@ -1,9 +1,8 @@
-public class Bilet {
-    private int priсe;
+public final class Bilet {
+    private static final int priсe = 10;
     private String category;
     public Bilet(String category, int priсe) {
         this.category = category;
-        this.priсe = priсe;
     }
     public Bilet(String category) {
         this.category = category;
@@ -14,10 +13,12 @@ public class Bilet {
     public String getCategory() {
         return category;
     }
-    public void setPriсe(int priсe) {
-        this.priсe = priсe;
-    }
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public static void main(String[] args) {
+        Bilet bilet1 = new Bilet("simple", 18);
+        System.out.println(bilet1.getCategory()+bilet1.getPriсe());
     }
 }
