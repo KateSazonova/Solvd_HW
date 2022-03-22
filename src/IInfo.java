@@ -1,5 +1,5 @@
 package src;
 
-public interface Info {
+public interface IInfo {
     public void showInfo ();
 }

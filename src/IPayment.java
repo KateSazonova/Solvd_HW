@@ -1,7 +1,7 @@
 package src;
 
-public interface Payment {
+public interface IPayment {
     public void work ();
-    public void payment ();
+    public void getpayment ();
     public void getPremium ();
 }

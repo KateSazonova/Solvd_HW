@@ -1,6 +1,6 @@
 package src;
 
-public class Staff implements Payment, Info{
+public class Staff implements IPayment, IInfo {
     private int salary;
     private String surname;
     private String position;
@@ -21,7 +21,7 @@ public class Staff implements Payment, Info{
     }
 
     @Override
-    public void payment() {
+    public void getpayment() {
         System.out.println(getPosition()+" get salary = "+getSalary()+" in a month");
     }
 
@@ -66,7 +66,7 @@ public class Staff implements Payment, Info{
         System.out.print("Staffer "+smith.getSurname()+ " moved " + lion.getKaind() +" from avairy "+happy.getAvairy());
         happy.setAvairy(5);
         System.out.println(" to avairy "+ happy.getAvairy());
-        Info info1=new Staff("Ivanov");
+        IInfo info1=new Staff("Ivanov");
         info1.showInfo();
     }
 }

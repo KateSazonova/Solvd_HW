@@ -2,7 +2,7 @@ package src;
 
 import java.util.Objects;
 
-abstract public class Animal implements Info, Action, Problem {
+abstract public class Animal implements IInfo, IAction, IProblem {
     private String kaind;
     private String eat;
     public Animal(String kaind, String eat) {

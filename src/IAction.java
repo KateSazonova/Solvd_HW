@@ -1,6 +1,6 @@
 package src;
 
-public interface Action {
+public interface IAction {
     public default void drink() {
         System.out.println("I drink water");
     }

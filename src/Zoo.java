@@ -1,6 +1,6 @@
 package src;
 
-class Zoo implements Info {
+class Zoo implements IInfo {
     private static String nameZoo;
     private static int avairy;
     public Zoo(String nameZoo) {

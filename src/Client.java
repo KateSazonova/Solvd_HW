@@ -1,6 +1,6 @@
 package src;
 
-public class Client implements Visited, Info {
+public class Client implements IVisit, IInfo {
     private int number;
     private static String nameClient;
     public Client(int number) {
