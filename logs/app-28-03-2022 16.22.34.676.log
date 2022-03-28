@@ -1,0 +1,4 @@
+2022-03-28 16:22:34,880 ERROR m.j.Cat [main] enter kaind
+main.java.KaindException: enter kaind
+	at main.java.Animal.setKaind(Animal.java:29) ~[Solvd_HW/:?]
+	at main.java.Cat.main(Cat.java:52) ~[Solvd_HW/:?]

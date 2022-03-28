@@ -1,5 +1,8 @@
 package main.java;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -7,9 +10,12 @@ public class Antelope extends Animal {
     public Antelope(String kaind, String eat) {
         super(kaind, eat);
     }
+    private static final Logger LOGGER = LogManager.getLogger(LoggerRunner.class);
+
     public void makeSound() {
         System.out.println("Say igogo");
     }
+
     @Override
     public void bite() {
         System.out.println("I am bite");
@@ -31,6 +37,7 @@ public class Antelope extends Animal {
         System.out.println("I can not attack");
     }
 
+
     public static void main(String[] args) {
 
         Antelope gazelle1 = new Antelope("gazelle", "grass");
@@ -40,17 +47,17 @@ public class Antelope extends Animal {
         Antelope gazelle2 = new Antelope("gnu", "grass");
         System.out.println(gazelle1.equals(gazelle2));
         gazelle2.eat();
-        Antelope gazelle3 = new Antelope("gazelle", "grass");
+        Antelope gazelle3 = new Antelope("impala", "grass");
         try {
             gazelle3.setKaind("gnu");
         } catch (KaindException e) {
-            e.printStackTrace();
+            LOGGER.error(e.getMessage(), e);
         }
 
-        List<String>antelope=new LinkedList();
-        antelope.add("gazelle");
-        antelope.add("gnu");
-        antelope.add("impala");
+        List<String> antelope = new LinkedList<>();
+        antelope.add(String.valueOf(gazelle1));
+        antelope.add(String.valueOf(gazelle2));
+        antelope.add(String.valueOf(gazelle3));
         System.out.println("LinkedList=" + antelope);
 
     }

@@ -1,0 +1,3 @@
+2022-03-23 15:04:58,748 INFO m.j.LoggerRunner [main] LOGGER INFO
+2022-03-23 15:04:58,753 ERROR m.j.LoggerRunner [main] LOGGER ERROR
+2022-03-23 15:04:58,753 DEBUG m.j.LoggerRunner [main] LOGGER DEBUG

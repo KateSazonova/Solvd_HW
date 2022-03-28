@@ -1,5 +1,8 @@
 package main.java;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public final class Bilet {
     private static final int priсe = 10;
     private String category;
@@ -25,6 +28,7 @@ public final class Bilet {
         }
         this.category = category;
     }
+    private static final Logger LOGGER = LogManager.getLogger(LoggerRunner.class);
     public static void main(String[] args) {
         Bilet bilet1 = new Bilet("simple", 18);
         System.out.println(bilet1.getCategory() + bilet1.getPriсe());
@@ -32,7 +36,7 @@ public final class Bilet {
         try {
             bilet2.setCategory("preferential");
         } catch (KaindException e) {
-            e.printStackTrace();
+            LOGGER.error(e.getMessage(), e);
         }
     }
 }

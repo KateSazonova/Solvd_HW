@@ -1,5 +1,10 @@
 package main.java;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.util.HashSet;
+
 public class Staff implements IPayment, IInfo {
     private int salary;
     private String surname;
@@ -40,6 +45,7 @@ public class Staff implements IPayment, IInfo {
     public void setSurname(String surname) {
         this.surname = surname;
     }
+    private static final Logger LOGGER = LogManager.getLogger(LoggerRunner.class);
 
     @Override
     public void work() {
@@ -72,18 +78,33 @@ public class Staff implements IPayment, IInfo {
         try {
             happy.setAvairy(5);
         } catch (AvairyException e) {
-            e.printStackTrace();
+            LOGGER.error(e.getMessage(), e);
         }
         System.out.println(" to avairy " + happy.getAvairy());
         IInfo info1 = new Staff("Ivanov");
         info1.showInfo();
 
-        Staff sidorov = new Staff(8, "worker");
+        Staff sidorov = new Staff(500, "worker");
         try {
             sidorov.setSalary(0);
         } catch (SalaryException e) {
-            e.printStackTrace();
+            LOGGER.error(e.getMessage(), e);
         }
         System.out.println(sidorov.getSalary());
+
+        Staff williams = new Staff(1000, "trainer");
+        Staff peters = new Staff(400,"salesman");
+        Staff gibson = new Staff(400,"salesman");
+
+
+        HashSet<Staff> hashSet=new HashSet<>();
+        hashSet.add(smith);
+        hashSet.add(sidorov);
+        hashSet.add(williams);
+        hashSet.add(peters);
+        hashSet.add(gibson);
+
+        System.out.println(hashSet);
+
     }
 }

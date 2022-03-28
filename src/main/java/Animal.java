@@ -1,5 +1,6 @@
 package main.java;
 
+import java.util.LinkedList;
 import java.util.Objects;
 
 abstract public class Animal implements IInfo, IAction, IProblem {
@@ -60,5 +61,11 @@ abstract public class Animal implements IInfo, IAction, IProblem {
     @Override
     public int hashCode() {
         return Objects.hash(kaind, eat);
+    }
+
+    public static void collection(LinkedList<? extends Animal> linkedList) {
+        for (Animal animal : linkedList) {
+            animal.eat();
+        }
     }
 }

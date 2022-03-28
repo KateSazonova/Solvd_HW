@@ -1,5 +1,8 @@
 package main.java;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Monkey extends Animal {
     public Monkey(String kaind, String eat) {
         super(kaind, eat);
@@ -36,8 +39,15 @@ public class Monkey extends Animal {
         System.out.println(gorilla1.toString());
         Monkey gorilla2 = new Monkey("gorilla", "appel");
         System.out.println(gorilla1.equals(gorilla2));
-        Animal gorilla = new Monkey("gorilla", "banana");
-        gorilla.showInfo();
+        Animal gorilla3 = new Monkey("gorilla", "peach");
+        gorilla3.showInfo();
+
+        List<Monkey> list=new ArrayList<>();
+        list.add(gorilla1);
+        list.add(gorilla2);
+        list.add((Monkey) gorilla3);
+        System.out.println("LinkedList=" + list);
+
     }
 
 }

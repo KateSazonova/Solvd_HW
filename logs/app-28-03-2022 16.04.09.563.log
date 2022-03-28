@@ -1,0 +1,4 @@
+2022-03-28 16:04:09,823 ERROR m.j.Staff [main] not correct
+main.java.SalaryException: not correct
+	at main.java.Staff.setSalary(Staff.java:36) ~[Solvd_HW/:?]
+	at main.java.Staff.main(Staff.java:89) ~[Solvd_HW/:?]
