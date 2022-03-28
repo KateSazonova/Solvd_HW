@@ -1,26 +1,35 @@
-package src;
+package main.java;
 
 import java.util.Objects;
 
 abstract public class Animal implements IInfo, IAction, IProblem {
     private String kaind;
     private String eat;
+
     public Animal(String kaind, String eat) {
         this.kaind = kaind;
         this.eat = eat;
     }
+
     public Animal(String kaind) {
         this.kaind = kaind;
     }
+
     public String getKaind() {
         return kaind;
     }
+
     public String getEat() {
         return eat;
     }
-    public void setKaind(String kaind) {
+
+    public void setKaind(String kaind) throws KaindException {
+        if (kaind == "") {
+            throw new KaindException("enter kaind");
+        }
         this.kaind = kaind;
     }
+
     public void setEat(String eat) {
         this.eat = eat;
     }
@@ -28,11 +37,14 @@ abstract public class Animal implements IInfo, IAction, IProblem {
     public final void eat() {
         System.out.println("I am eating ");
     }
+
     @Override
     public String toString() {
-        return getKaind()+" eat "+getEat();
+        return getKaind() + " eat " + getEat();
     }
-    public abstract void makeSound ();
+
+    public abstract void makeSound();
+
     public void bite() {
         System.out.println("I am not bite");
     }

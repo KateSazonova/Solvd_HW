@@ -1,4 +1,4 @@
-package src;
+package main.java;
 
 public interface IProblem {
     public void fight();

@@ -1,4 +1,4 @@
-package src;
+package main.java;
 
 public class Monkey extends Animal {
     public Monkey(String kaind, String eat) {
@@ -8,18 +8,22 @@ public class Monkey extends Animal {
     public void makeSound() {
         System.out.println("Say u-u-u-u");
     }
+
     @Override
     public void bite() {
         System.out.println("I am bite");
     }
+
     @Override
     public void showInfo() {
         System.out.println(getKaind());
     }
+
     @Override
     public void fight() {
         System.out.println("I can fight");
     }
+
     @Override
     public void attack() {
         System.out.println("I can attack");

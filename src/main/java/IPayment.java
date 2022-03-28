@@ -1,4 +1,4 @@
-package src;
+package main.java;
 
 public interface IPayment {
     public void work ();
