@@ -1,4 +1,4 @@
-package main.java;
+package animals;
 
 public class AvairyException extends Exception{
     public AvairyException() {

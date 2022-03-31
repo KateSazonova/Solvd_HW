@@ -1,4 +1,4 @@
-package main.java;
+package animals;
 
 public class Client implements IVisit, IInfo {
     private int number;

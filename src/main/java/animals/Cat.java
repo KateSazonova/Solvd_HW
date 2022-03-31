@@ -1,4 +1,4 @@
-package main.java;
+package animals;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

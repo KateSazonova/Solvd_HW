@@ -1,4 +1,4 @@
-package main.java;
+package animals;
 
 public interface IProblem {
     public void fight();

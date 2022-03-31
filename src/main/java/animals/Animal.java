@@ -1,4 +1,4 @@
-package main.java;
+package animals;
 
 import java.util.LinkedList;
 import java.util.Objects;

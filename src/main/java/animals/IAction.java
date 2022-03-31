@@ -1,4 +1,4 @@
-package main.java;
+package animals;
 
 public interface IAction {
     public default void drink() {

@@ -1,4 +1,4 @@
-package main.java;
+package animals;
 
 class Zoo implements IInfo {
     private static String nameZoo;

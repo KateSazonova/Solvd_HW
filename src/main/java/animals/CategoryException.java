@@ -1,4 +1,4 @@
-package main.java;
+package animals;
 
 public class CategoryException extends Exception {
     public CategoryException() {

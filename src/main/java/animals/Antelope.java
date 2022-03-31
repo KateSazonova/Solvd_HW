@@ -1,4 +1,4 @@
-package main.java;
+package animals;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -49,7 +49,7 @@ public class Antelope extends Animal {
         gazelle2.eat();
         Antelope gazelle3 = new Antelope("impala", "grass");
         try {
-            gazelle3.setKaind("gnu");
+            gazelle3.setKaind("");
         } catch (KaindException e) {
             LOGGER.error(e.getMessage(), e);
         }

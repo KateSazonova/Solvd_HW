@@ -1,4 +1,4 @@
-package main.java;
+package animals;
 
 public class SalaryException extends Exception {
     public SalaryException(String description) {

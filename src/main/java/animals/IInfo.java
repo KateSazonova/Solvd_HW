@@ -1,4 +1,4 @@
-package main.java;
+package animals;
 
 public interface IInfo {
     public void showInfo ();
