@@ -1,6 +1,6 @@
 package animals;
 
-public class NameException extends Exception{
+public class NameException extends Exception {
     public NameException() {
     }
 

@@ -25,7 +25,7 @@ abstract public class Animal implements IInfo, IAction, IProblem {
     }
 
     public void setKaind(String kaind) throws KaindException {
-        if (kaind == "") {
+        if (kaind.equals("")) {
             throw new KaindException("enter kaind");
         }
         this.kaind = kaind;

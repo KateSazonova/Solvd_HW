@@ -56,7 +56,7 @@ public class Client implements IVisit, IInfo {
         visited();
         Client sam = new Client ("Sam");
         try {
-            sam.setNameClient("");
+            sam.setNameClient("l");
         } catch (NameException e) {
             e.printStackTrace();
         }
