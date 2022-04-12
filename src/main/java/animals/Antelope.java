@@ -6,7 +6,6 @@ import org.apache.logging.log4j.Logger;
 import java.util.LinkedList;
 import java.util.List;
 
-import static animals.WorkingDay.Monday;
 
 public class Antelope extends Animal {
     public Antelope(String kaind, String eat) {

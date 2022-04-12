@@ -1,7 +1,7 @@
 package animals;
 
 public interface IVisit {
-    public void takeFoto();
-    public void buy ();
+    void takeFoto();
+    void buy ();
 
 }

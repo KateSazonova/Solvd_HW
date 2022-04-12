@@ -3,32 +3,48 @@ package animals;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.io.File;
-import java.io.FileWriter;
+
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
+import static org.apache.log4j.helpers.Loader.getResource;
 
 public class Article {
-    private static final Logger LOGGER = LogManager.getLogger(LoggerRunner.class);
 
-    public static void main(String[] args) {
-        File file=new File(Article.class.getClassLoader().getResource("Lions").getFile());
-        try {
-            String str = FileUtils.readFileToString(file, "UTF-8");
-            {
-                LOGGER.info("the-" + StringUtils.countMatches(str, "the"));
-                LOGGER.info("lions-" + StringUtils.countMatches(str, "lions"));
-                LOGGER.info("Africa-" + StringUtils.countMatches(str, "Africa"));
-                LOGGER.info("kill-" + StringUtils.countMatches(str, "kill"));
-                LOGGER.info("born-" + StringUtils.countMatches(str, "born"));
-            }
+    public static void main(String[] args) throws IOException {
+        File file = new File(getResource("Lions").getFile());
+        File file2 = new File("result.txt");
 
-        } catch (IOException e) {
-            e.printStackTrace();
+        Map<String, Integer> resultMap = new HashMap<>();
+
+        String text = FileUtils.readFileToString(file);
+        text = StringUtils.lowerCase(text);
+        text = text.replace(".", "");
+        text = text.replace(",", "");
+        text = text.replace("!", "");
+        text = text.replace("(", "");
+        text = text.replace(")", "");
+        text = text.replace("-", "");
+        text = text.replace(":", "");
+
+        String[] words = text.split(" ");
+
+        for (String word : words) {
+            int count = StringUtils.countMatches(text, word);
+            resultMap.put(word, count);
         }
+
+        resultMap.forEach(
+                (key, value) -> {
+                    try {
+                        FileUtils.writeStringToFile(file2, key + ", " + value + "\n", true);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                });
     }
 }
-
 

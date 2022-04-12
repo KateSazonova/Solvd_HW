@@ -5,7 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 public class Client implements IVisit, IInfo {
     private int number;
-    private static String nameClient;
+    private String nameClient;
 
     public Client(int number) {
         this.number = number;
@@ -19,7 +19,7 @@ public class Client implements IVisit, IInfo {
         return number;
     }
 
-    public static String getNameClient() {
+    public String getNameClient() {
         return nameClient;
     }
 
@@ -49,11 +49,11 @@ public class Client implements IVisit, IInfo {
         LOGGER.info(getNumber());
     }
 
-    public static void visited() {
+    public void visited() {
         LOGGER.info("Visiter " + getNameClient() + " visited Zoo " + Zoo.getNameZoo());
     }
 
-    public static void main(String[] args) {
+    public void main(String[] args) {
         Client jon = new Client("Jon");
         Zoo africa = new Zoo("Africa");
         visited();

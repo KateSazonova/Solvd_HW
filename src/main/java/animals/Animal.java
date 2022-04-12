@@ -1,5 +1,6 @@
 package animals;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -28,7 +29,8 @@ abstract public class Animal implements IInfo, IAction, IProblem {
     }
 
     public void setKaind(String kaind) throws KaindException {
-        if (kaind.equals("")) {
+        StringUtils.isEmpty(kaind);
+        if (StringUtils.isEmpty(kaind)) {
             throw new KaindException("enter kaind");
         }
         this.kaind = kaind;

@@ -23,7 +23,7 @@ public final class Bilet {
         return category;
     }
     public void setCategory(String category) throws KaindException {
-        if (category!="full") {
+        if (category.equals("preferential")) {
             throw new KaindException("out of stock");
         }
         this.category = category;
@@ -31,7 +31,7 @@ public final class Bilet {
     private static final Logger LOGGER = LogManager.getLogger(LoggerRunner.class);
     public static void main(String[] args) {
         Bilet bilet1 = new Bilet("simple", 18);
-        System.out.println(bilet1.getCategory() + bilet1.getPriсe());
+        LOGGER.info(bilet1.getCategory() + bilet1.getPriсe());
         Bilet bilet2 = new Bilet("full",10);
         try {
             bilet2.setCategory("preferential");

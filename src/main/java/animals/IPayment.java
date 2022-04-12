@@ -1,7 +1,7 @@
 package animals;
 
 public interface IPayment {
-    public void work ();
-    public void getpayment ();
-    public void getPremium ();
+    void work ();
+    void getpayment ();
+    void getPremium ();
 }
