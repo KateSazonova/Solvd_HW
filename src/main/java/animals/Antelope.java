@@ -6,6 +6,8 @@ import org.apache.logging.log4j.Logger;
 import java.util.LinkedList;
 import java.util.List;
 
+import static animals.WorkingDay.Monday;
+
 public class Antelope extends Animal {
     public Antelope(String kaind, String eat) {
         super(kaind, eat);
@@ -13,28 +15,28 @@ public class Antelope extends Animal {
     private static final Logger LOGGER = LogManager.getLogger(LoggerRunner.class);
 
     public void makeSound() {
-        System.out.println("Say igogo");
+        LOGGER.info("Say igogo");
     }
 
     @Override
     public void bite() {
-        System.out.println("I am bite");
+        LOGGER.info("I am bite");
     }
 
     @Override
     public void showInfo() {
-        System.out.println(getKaind());
+        LOGGER.info(getKaind());
     }
 
 
     @Override
     public void fight() {
-        System.out.println("I can not fight");
+        LOGGER.info("I can not fight");
     }
 
     @Override
     public void attack() {
-        System.out.println("I can not attack");
+        LOGGER.info("I can not attack");
     }
 
 
@@ -43,9 +45,9 @@ public class Antelope extends Animal {
         Antelope gazelle1 = new Antelope("gazelle", "grass");
         gazelle1.makeSound();
         gazelle1.bite();
-        System.out.println(gazelle1.toString());
+        LOGGER.info(gazelle1.toString());
         Antelope gazelle2 = new Antelope("gnu", "grass");
-        System.out.println(gazelle1.equals(gazelle2));
+        LOGGER.info(gazelle1.equals(gazelle2));
         gazelle2.eat();
         Antelope gazelle3 = new Antelope("impala", "grass");
         try {
@@ -58,7 +60,7 @@ public class Antelope extends Animal {
         antelope.add(String.valueOf(gazelle1));
         antelope.add(String.valueOf(gazelle2));
         antelope.add(String.valueOf(gazelle3));
-        System.out.println("LinkedList=" + antelope);
+        LOGGER.info("LinkedList=" + antelope);
 
     }
 

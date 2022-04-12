@@ -1,5 +1,8 @@
 package animals;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.LinkedList;
 import java.util.Objects;
 
@@ -34,9 +37,10 @@ abstract public class Animal implements IInfo, IAction, IProblem {
     public void setEat(String eat) {
         this.eat = eat;
     }
+    private static final Logger LOGGER = LogManager.getLogger(LoggerRunner.class);
 
     public final void eat() {
-        System.out.println("I am eating ");
+        LOGGER.info("I am eating ");
     }
 
     @Override
@@ -47,7 +51,7 @@ abstract public class Animal implements IInfo, IAction, IProblem {
     public abstract void makeSound();
 
     public void bite() {
-        System.out.println("I am not bite");
+        LOGGER.info("I am not bite");
     }
 
     @Override

@@ -17,7 +17,6 @@ public class Article {
         File file=new File(Article.class.getClassLoader().getResource("Lions").getFile());
         try {
             String str = FileUtils.readFileToString(file, "UTF-8");
-            FileWriter fileWriter = new FileWriter(file);
             {
                 LOGGER.info("the-" + StringUtils.countMatches(str, "the"));
                 LOGGER.info("lions-" + StringUtils.countMatches(str, "lions"));
@@ -29,8 +28,7 @@ public class Article {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        }
     }
-
+}
 
 

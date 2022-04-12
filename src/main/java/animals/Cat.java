@@ -13,27 +13,27 @@ public class Cat extends Animal {
     private static final Logger LOGGER = LogManager.getLogger(LoggerRunner.class);
 
     public void makeSound() {
-        System.out.println("Say rrr");
+        LOGGER.info("Say rrr");
     }
 
     @Override
     public void bite() {
-        System.out.println("I am bite");
+        LOGGER.info("I am bite");
     }
 
     @Override
     public void showInfo() {
-        System.out.println(getKaind());
+        LOGGER.info(getKaind());
     }
 
     @Override
     public void fight() {
-        System.out.println("I can fight");
+        LOGGER.info("I can fight");
     }
 
     @Override
     public void attack() {
-        System.out.println("I can attack");
+        LOGGER.info("I can attack");
     }
 
 
@@ -42,9 +42,9 @@ public class Cat extends Animal {
         Cat lion1 = new Cat("african lion", "meat");
         lion1.makeSound();
         lion1.bite();
-        System.out.println(lion1.toString());
+        LOGGER.info(lion1.toString());
         Cat lion2 = new Cat("white lion", "chicken");
-        System.out.println(lion1.equals(lion2));
+        LOGGER.info(lion1.equals(lion2));
         lion1.showInfo();
         lion1.drink();
         Cat lion3 = new Cat("asian lion", "antelope");
@@ -58,9 +58,9 @@ public class Cat extends Animal {
         catLinkedList.add(lion1);
         catLinkedList.add(lion2);
         catLinkedList.add(lion3);
-        System.out.println("LinkedList=" + catLinkedList);
+        LOGGER.info("LinkedList=" + catLinkedList);
         catLinkedList.remove(2);
-        System.out.println("LinkedList=" + catLinkedList);
+        LOGGER.info("LinkedList=" + catLinkedList);
         collection(catLinkedList);
 
     }

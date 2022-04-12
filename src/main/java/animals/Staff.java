@@ -49,38 +49,38 @@ public class Staff implements IPayment, IInfo {
 
     @Override
     public void work() {
-        System.out.println("Works like " + getPosition());
+        LOGGER.info("Works like " + getPosition());
     }
 
     @Override
     public void getpayment() {
-        System.out.println(getPosition() + " get salary = " + getSalary() + " in a month");
+        LOGGER.info(getPosition() + " get salary = " + getSalary() + " in a month");
     }
 
 
     @Override
     public void getPremium() {
-        System.out.println(getSurname() + " get premium " + getSalary() * 2);
+        LOGGER.info(getSurname() + " get premium " + getSalary() * 2);
     }
 
 
     @Override
     public void showInfo() {
-        System.out.println(getSurname());
+        LOGGER.info(getSurname());
     }
 
     public static void main(String[] args) {
         Cat lion = new Cat("lion", "meat");
         Staff smith = new Staff("Smith");
-        System.out.println("Staffer " + smith.getSurname() + " fed " + lion.getKaind());
+        LOGGER.info("Staffer " + smith.getSurname() + " fed " + lion.getKaind());
         Zoo happy = new Zoo(3);
-        System.out.print("Staffer " + smith.getSurname() + " moved " + lion.getKaind() + " from avairy " + happy.getAvairy());
+        LOGGER.info("Staffer " + smith.getSurname() + " moved " + lion.getKaind() + " from avairy " + happy.getAvairy());
         try {
             happy.setAvairy(5);
         } catch (AvairyException e) {
             LOGGER.error(e.getMessage(), e);
         }
-        System.out.println(" to avairy " + happy.getAvairy());
+        LOGGER.info(" to avairy " + happy.getAvairy());
         IInfo info1 = new Staff("Ivanov");
         info1.showInfo();
 
@@ -90,7 +90,7 @@ public class Staff implements IPayment, IInfo {
         } catch (SalaryException e) {
             LOGGER.error(e.getMessage(), e);
         }
-        System.out.println(sidorov.getSalary());
+        LOGGER.info(sidorov.getSalary());
 
         Staff williams = new Staff(1000, "trainer");
         Staff peters = new Staff(400,"salesman");
@@ -104,7 +104,7 @@ public class Staff implements IPayment, IInfo {
         hashSet.add(peters);
         hashSet.add(gibson);
 
-        System.out.println(hashSet);
+        LOGGER.info(hashSet);
 
     }
 }

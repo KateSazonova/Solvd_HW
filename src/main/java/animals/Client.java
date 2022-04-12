@@ -1,5 +1,8 @@
 package animals;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class Client implements IVisit, IInfo {
     private int number;
     private static String nameClient;
@@ -30,24 +33,24 @@ public class Client implements IVisit, IInfo {
         }
         this.nameClient = nameClient;
     }
-
+    private static final Logger LOGGER = LogManager.getLogger(LoggerRunner.class);
     @Override
     public void takeFoto() {
-        System.out.println(getNameClient() + " take foto");
+        LOGGER.info(getNameClient() + " take foto");
     }
 
     @Override
     public void buy() {
-        System.out.println(getNameClient() + " buy");
+        LOGGER.info(getNameClient() + " buy");
     }
 
     @Override
     public void showInfo() {
-        System.out.println(getNumber());
+        LOGGER.info(getNumber());
     }
 
     public static void visited() {
-        System.out.println("Visiter " + getNameClient() + " visited Zoo " + Zoo.getNameZoo());
+        LOGGER.info("Visiter " + getNameClient() + " visited Zoo " + Zoo.getNameZoo());
     }
 
     public static void main(String[] args) {
