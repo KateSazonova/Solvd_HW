@@ -39,24 +39,6 @@
             <artifactId>commons-io</artifactId>
             <version>2.4</version>
         </dependency>
-        <dependency>
-            <groupId>io.github.lunasaw</groupId>
-            <artifactId>wednesday-parent</artifactId>
-            <version>1.0.1-RELEASE</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>io.github.lunasaw</groupId>
-            <artifactId>wednesday-server</artifactId>
-            <version>1.0.1-RELEASE</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.github.wednesday-solutions</groupId>
-            <artifactId>CreditCardEditText</artifactId>
-            <version>1.0</version>
-            <scope>compile</scope>
-        </dependency>
 
 
     </dependencies>
