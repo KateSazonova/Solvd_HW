@@ -1,5 +1,5 @@
-package animals;
+package animals.animalsintrface;
 @FunctionalInterface
-interface Cost {
+public interface ICost {
     int calculateCost(int x, int y);
 }

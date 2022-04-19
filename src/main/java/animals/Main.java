@@ -1,10 +1,12 @@
 package animals;
 
+import animals.animalsintrface.ICost;
+import animals.animalsintrface.INotice;
 import animals.exception.AvairyException;
 import animals.exception.KaindException;
 import animals.exception.NameException;
 import animals.exception.SalaryException;
-import animals.animalsintrface.Converter;
+import animals.animalsintrface.IConverter;
 import animals.animalsintrface.IInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -161,15 +163,15 @@ public class Main {
         Type adult = Type.ADULT;
         adult.toString();
 
-        Notice feedNotice = msg -> LOGGER.info(msg);
+        INotice feedNotice = msg -> LOGGER.info(msg);
         feedNotice.sendNotice("Not feed animals");
 
-        Cost totalCost;
+        ICost totalCost;
         totalCost = ((x, y) -> x + y);
         int result = totalCost.calculateCost(50, 25);
         LOGGER.info(result);
 
-        Converter<Monkey, Antelope> converter = x-> new Antelope(x.getKaind(), x.getEat());
+        IConverter<Monkey, Antelope> converter = x-> new Antelope(x.getKaind(), x.getEat());
         gazelle = converter.convert(gorilla);
         LOGGER.info("Kaind-"+gazelle.getKaind()+" eat-" + gazelle.getEat());
     }

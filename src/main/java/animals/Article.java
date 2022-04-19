@@ -27,6 +27,9 @@ public class Article {
         text = text.replace(")", "");
         text = text.replace("-", "");
         text = text.replace(":", "");
+        text = text.replace("-", "");
+        text = text.replace("/", "");
+
 
         String[] words = text.split(" ");
 
