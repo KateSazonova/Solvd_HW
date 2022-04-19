@@ -1,4 +1,4 @@
-package animals;
+package animals.exception;
 
 public class KaindException extends Exception {
     public KaindException() {

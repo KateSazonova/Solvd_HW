@@ -1,4 +1,4 @@
-package animals;
+package animals.exception;
 
 public class AvairyException extends Exception{
     public AvairyException() {

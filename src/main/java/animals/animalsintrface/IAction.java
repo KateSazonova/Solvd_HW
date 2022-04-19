@@ -1,5 +1,6 @@
-package animals;
+package animals.animalsintrface;
 
+import animals.LoggerRunner;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 

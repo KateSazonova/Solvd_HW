@@ -1,4 +1,4 @@
-package animals;
+package animals.exception;
 
 public class SalaryException extends Exception {
     public SalaryException() {

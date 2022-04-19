@@ -1,9 +1,13 @@
 package animals;
 
+import animals.exception.NameException;
+import animals.animalsintrface.IInfo;
+import animals.animalsintrface.IVisit;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class Client implements IVisit, IInfo {
+    private static final Logger LOGGER = LogManager.getLogger(Client.class);
     private int number;
     private String nameClient;
 
@@ -28,12 +32,12 @@ public class Client implements IVisit, IInfo {
     }
 
     public void setNameClient(String nameClient) throws NameException {
-        if(nameClient.length()<1){
+        if (nameClient.length() < 1) {
             throw new NameException("enter name");
         }
         this.nameClient = nameClient;
     }
-    private static final Logger LOGGER = LogManager.getLogger(LoggerRunner.class);
+
     @Override
     public void takeFoto() {
         LOGGER.info(getNameClient() + " take foto");
@@ -50,18 +54,6 @@ public class Client implements IVisit, IInfo {
     }
 
     public void visited() {
-        LOGGER.info("Visiter " + getNameClient() + " visited Zoo " + Zoo.getNameZoo());
-    }
-
-    public void main(String[] args) {
-        Client jon = new Client("Jon");
-        Zoo africa = new Zoo("Africa");
-        visited();
-        Client sam = new Client ("Sam");
-        try {
-            sam.setNameClient("l");
-        } catch (NameException e) {
-            e.printStackTrace();
-        }
+        LOGGER.info("Visiter " + getNameClient() + " visited Zoo");
     }
 }

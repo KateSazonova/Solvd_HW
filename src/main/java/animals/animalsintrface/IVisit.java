@@ -1,4 +1,4 @@
-package animals;
+package animals.animalsintrface;
 
 public interface IVisit {
     void takeFoto();

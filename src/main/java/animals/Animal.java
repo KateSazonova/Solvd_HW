@@ -1,5 +1,9 @@
 package animals;
 
+import animals.exception.KaindException;
+import animals.animalsintrface.IAction;
+import animals.animalsintrface.IInfo;
+import animals.animalsintrface.IProblem;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -7,7 +11,8 @@ import org.apache.logging.log4j.Logger;
 import java.util.LinkedList;
 import java.util.Objects;
 
-abstract public class Animal implements IInfo, IAction, IProblem {
+public abstract class Animal implements IInfo, IAction, IProblem {
+    private static final Logger LOGGER = LogManager.getLogger(Animal.class);
     private String kaind;
     private String eat;
 
@@ -39,7 +44,6 @@ abstract public class Animal implements IInfo, IAction, IProblem {
     public void setEat(String eat) {
         this.eat = eat;
     }
-    private static final Logger LOGGER = LogManager.getLogger(LoggerRunner.class);
 
     public final void eat() {
         LOGGER.info("I am eating ");

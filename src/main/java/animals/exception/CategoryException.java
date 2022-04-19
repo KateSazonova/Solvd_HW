@@ -1,4 +1,4 @@
-package animals;
+package animals.exception;
 
 public class CategoryException extends Exception {
     public CategoryException() {
