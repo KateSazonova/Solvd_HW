@@ -3,9 +3,6 @@ package animals;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.LinkedList;
-import java.util.List;
-
 
 public class Antelope extends Animal {
     private static final Logger LOGGER = LogManager.getLogger(Antelope.class);

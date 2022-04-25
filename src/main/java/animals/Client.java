@@ -19,6 +19,10 @@ public class Client implements IVisit, IInfo {
         this.nameClient = nameClient;
     }
 
+    public Client() {
+
+    }
+
     public int getNumber() {
         return number;
     }

@@ -12,7 +12,7 @@ public class Staff implements IPayment, IInfo {
     private String surname;
     private String position;
 
-    public Staff(int salary, String position) {
+    public Staff() {
         this.salary = salary;
         this.position = position;
     }

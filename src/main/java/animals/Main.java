@@ -11,6 +11,8 @@ import animals.animalsintrface.IInfo;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Parameter;
 import java.util.*;
 import java.util.LinkedList;
 import java.util.stream.Collectors;
@@ -42,7 +44,7 @@ public class Main {
         antelope.add(String.valueOf(gazelle));
         antelope.add(String.valueOf(gnu));
         antelope.add(String.valueOf(impala));
-        antelope.stream().filter(a->a.startsWith("g")).forEach(a->LOGGER.info(a));
+        antelope.stream().filter(a -> a.startsWith("g")).forEach(a -> LOGGER.info(a));
         LOGGER.info("LinkedList=" + antelope);
 
         Bilet bilet1 = new Bilet("simple", 18);
@@ -73,11 +75,10 @@ public class Main {
         cats.add(africanLion);
         cats.add(whiteLion);
         cats.add(asianLion);
-        cats.stream().forEach(c->LOGGER.info(c));
+        cats.stream().forEach(c -> LOGGER.info(c));
         cats.remove(2);
-        cats.stream().forEach(c->LOGGER.info(c));
+        cats.stream().forEach(c -> LOGGER.info(c));
         collection(cats);
-
 
 
         Client jon = new Client("Jon");
@@ -104,7 +105,7 @@ public class Main {
         monkeys.add(gorilla);
         monkeys.add(macaque);
         monkeys.add((Monkey) jocko);
-        Set<Monkey> set=monkeys.stream().collect(Collectors.toSet());
+        Set<Monkey> set = monkeys.stream().collect(Collectors.toSet());
         LOGGER.info(monkeys);
 
         Cat lion = new Cat("lion", "meat");
@@ -121,7 +122,7 @@ public class Main {
         IInfo info1 = new Staff("Ivanov");
         info1.showInfo();
 
-        Staff sidorov = new Staff(500, "worker");
+        Staff sidorov = new Staff();
         try {
             sidorov.setSalary(0);
         } catch (SalaryException e) {
@@ -129,9 +130,9 @@ public class Main {
         }
         LOGGER.info(sidorov.getSalary());
 
-        Staff williams = new Staff(1000, "trainer");
-        Staff peters = new Staff(400, "salesman");
-        Staff gibson = new Staff(400, "salesman");
+        Staff williams = new Staff();
+        Staff peters = new Staff();
+        Staff gibson = new Staff();
 
 
         HashSet<Staff> surname = new HashSet<>();
@@ -171,8 +172,30 @@ public class Main {
         int result = totalCost.calculateCost(50, 25);
         LOGGER.info(result);
 
-        IConverter<Monkey, Antelope> converter = x-> new Antelope(x.getKaind(), x.getEat());
+        IConverter<Monkey, Antelope> converter = x -> new Antelope(x.getKaind(), x.getEat());
         gazelle = converter.convert(gorilla);
-        LOGGER.info("Kaind-"+gazelle.getKaind()+" eat-" + gazelle.getEat());
+        LOGGER.info("Kaind-" + gazelle.getKaind() + " eat-" + gazelle.getEat());
+
+        Staff staff = new Staff();
+        Class clss = Staff.class;
+        LOGGER.info(clss);
+        Constructor[] constructors = clss.getDeclaredConstructors();
+        for (Constructor constructor : constructors) {
+            LOGGER.info(constructor.getName());
+            Parameter[] parameters = constructor.getParameters();
+            for (Parameter parameter : parameters) {
+                LOGGER.info(parameter.getName());
+                LOGGER.info(parameter.getType().getName());
+            }
+        }
+        ClientThread clientDay1 = new ClientThread();
+        clientDay1.start();
+        ClientThread clientDay2 = new ClientThread();
+        clientDay2.start();
+
+        Thread clientDay3 = new Thread(new ClientRunnable());
+        Thread clientDay4 = new Thread(new ClientRunnable());
+        clientDay3.start();
+        clientDay4.start();
     }
 }
